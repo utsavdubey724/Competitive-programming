@@ -1,6 +1,6 @@
 /*
 Problem:    Running Sum of 1D Array 
-Date:       Jul 12, 2013
+Date:       Jan 6, 2021
 Author:     Utsav Dubey, utsav_201700433@smit.smu.edu.in
 Difficulty: Easy
 Source:     https://leetcode.com/problems/running-sum-of-1d-array/
