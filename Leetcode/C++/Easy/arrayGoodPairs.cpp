@@ -30,8 +30,17 @@ Constraints:
 */
 
 class Solution {
-public:
-    int numIdenticalPairs(vector<int>& nums) {
+    public:
+    int numIdenticalPairs(vector<int>& nums) {      //O(n)
+        int count=0;
+        unordered_map<int,int> myMap;
+        for(int i=0;i<nums.size();i++){
+            count+=myMap[nums[i]];
+            myMap[nums[i]]++;
+        }
+        return count;
+    }
+    /*int numIdenticalPairs(vector<int>& nums) {      //O(n^2)
         int count=0;
         for(int i=0;i<nums.size();i++){
             for(int j=i+1;j<nums.size();j++){
@@ -40,5 +49,5 @@ public:
             }
         }
         return count;
-    }
+    }*/
 };
