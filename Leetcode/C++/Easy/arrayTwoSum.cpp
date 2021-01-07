@@ -33,22 +33,50 @@ Only one valid answer exists.
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        vector<int> ans;
+        vector<int> ans;                              //O(n)
+        unordered_map<int,int> myMap;
+        for(int i=0;i<nums.size();i++){
+            int n1 = nums[i];
+            int n2 = target - n1;
+            auto it = myMap.find(n2);
+            if(it != myMap.end()){
+                return {it->second, i};    
+            }
+            myMap[n1] = i;
+        }
+        return {};
+    }
+    /*vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> ans;                                //O(n)
+        map<int,int> myMap;
+        //2(0) 7(1) 11(3) 15(4)
+        for(int i=0;i<nums.size();i++)
+            myMap[nums[i]]=i;                          
+        for(int i=0;i<nums.size();i++){
+            int find = target - nums[i];
+            if(myMap[find] && myMap[find] != i){        
+                ans.push_back(i);                       
+                ans.push_back(myMap[find]);
+                return ans;
+            }
+        }
+        return {};
+    }*/
+    /*vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> ans;                                //O(n^2)
         int flag=1;
         for(int i=0;i<nums.size();i++){
-            int sum=0;
-            for(int j=0;j<nums.size();j++){
-                if(i!=j){
-                    if(nums[i]+nums[j]==target){
-                        ans.push_back(i);
-                        ans.push_back(j);
-                        flag=0;
-                    }
-                }
+            for(int j=i+1;j<nums.size();j++){
+                if(nums[i]+nums[j]==target){
+                    ans.push_back(i);
+                    ans.push_back(j);
+                    flag=0;
+                    break;
+                }                
             } 
             if(flag==0)
                 break;
         }
         return ans;
-    }
+    }*/
 };
