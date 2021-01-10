@@ -33,7 +33,7 @@ Constraints:
 
 class Solution {
 public:
-    vector<int> replaceElements(vector<int>& arr) {
+    vector<int> replaceElements(vector<int>& arr) {     //O(n)
         int n=arr.size(),maxi=-1,temp;
         for(int i=n-1;i>=0;i--){
             int temp=arr[i];
@@ -42,7 +42,7 @@ public:
         }
         return arr;
     }
-    /*vector<int> replaceElements(vector<int>& arr) {
+    /*vector<int> replaceElements(vector<int>& arr) {   //O(n^2)
         int n=arr.size();
         int max=-1;
         for(int i=0;i<n-1;i++){
