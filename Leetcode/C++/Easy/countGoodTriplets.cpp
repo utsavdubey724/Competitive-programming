@@ -1,6 +1,6 @@
 /*
 Problem:    Count Good Triplets
-Date:       Jan 8, 2021
+Date:       Jan 10, 2021
 Author:     Utsav Dubey, utsav_201700433@smit.smu.edu.in
 Difficulty: Easy
 Source:     https://leetcode.com/problems/count-good-triplets/
