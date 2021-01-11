@@ -31,6 +31,7 @@ Constraints:
 
 class Solution {
 public:
+    //Method 1: Using one unordered_map and one unordered_set
     bool uniqueOccurrences(vector<int>& arr) {
         unordered_map<int,int> myMap;
         unordered_set<int> mySet;
@@ -43,6 +44,26 @@ public:
         }
         return true;
     }
+    
+    //Method 2: Using two unordered_map
+    /*bool uniqueOccurrences(vector<int>& arr) {
+        unordered_map<int,int> myMap;
+        unordered_map<int,int> unique;
+        for(int ele : arr)          //for(int i=0;i<arr.size();i++)   
+            myMap[ele]++;               //myMap[arr[i]]++;  
+        int j=0;
+        for(auto ele : myMap){
+            if(unique.find(ele.second) != unique.end())
+                return false;
+            unique[ele.second]=j++;
+        }
+        //for(auto ele : unique)
+          //  cout<<ele.first<<" ";
+        //cout<<endl;
+        return true;
+    }*/
+    
+    //Method 3: Using Brute Force
     /*bool uniqueOccurrences(vector<int>& arr) {
         int count;
         vector<int> myVec;
