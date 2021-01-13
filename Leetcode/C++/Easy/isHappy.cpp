@@ -35,7 +35,7 @@ Constraints:
 class Solution {
 public:
     bool isHappy(int n) {
-        long sum=0,rem,flag=1;;
+        long sum=0,rem,flag=1;
         unordered_set<int> mySet;
         while(n>0){
             rem=n%10;
