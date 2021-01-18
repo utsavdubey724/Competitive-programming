@@ -22,7 +22,9 @@ The result can be in any order.
 
 Follow up:
 What if the given array is already sorted? How would you optimize your algorithm?
+Ans: Two Pointer Algorithm
 What if nums1's size is small compared to nums2's size? Which algorithm is better?
+Ans: Hashmap Algorithm is better
 What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
 */
 
@@ -30,7 +32,27 @@ What if elements of nums2 are stored on disk, and the memory is limited such tha
 namespace{
     class Solution {
     public:
-        vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {         //O(mlogm + nlogn )
+            vector<int> ans;
+            sort(nums1.begin(),nums1.end());
+            sort(nums2.begin(),nums2.end());
+            if(nums1.size()>nums2.size())
+                nums1.swap(nums2);
+            int j=0;
+            for(int i=0;i<nums1.size() && j<nums2.size();){
+                if(nums1[i]==nums2[j]){
+                    ans.push_back(nums1[i]);
+                    i++;
+                    j++;
+                }
+                else if(nums1[i]<nums2[j])
+                    i++;
+                else
+                    j++;
+            }
+            return ans;
+        }
+        /*vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {       //O(n+m)
             vector<int> ans;
             unordered_map<int,int> myMap;
             for(int i=0;i<nums1.size();i++){
@@ -46,8 +68,8 @@ namespace{
                 }
             }
             return ans;
-        }
-        /*vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+        }*/
+        /*vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {         //O(mn)
             vector<int> ans;
             for(int i=0;i<nums1.size();i++){
                 for(int j=0;j<nums2.size();j++){
