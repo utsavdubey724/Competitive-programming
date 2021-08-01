@@ -33,16 +33,29 @@ Constraints:
 
 class Solution {
 public:
-    vector<int> replaceElements(vector<int>& arr) {     //O(n)
-        int n=arr.size(),maxi=-1,temp;
-        for(int i=n-1;i>=0;i--){
+    vector<int> replaceElements(vector<int>& arr) {      //Time Complexity: O(n) 
+        int maxi=-1;                                     //In-place
+        for(int i=arr.size()-1;i>=0;i--){
             int temp=arr[i];
             arr[i]=maxi;
-            maxi=max(maxi,temp);
+            if(temp>maxi)
+                maxi=temp;
         }
         return arr;
     }
-    /*vector<int> replaceElements(vector<int>& arr) {   //O(n^2)
+    /*vector<int> replaceElements(vector<int>& arr) {   //Time Complexity: O(n) 
+        stack<int> s;                                   //Using Stack
+        s.push(-1);
+        for(int i=arr.size()-1;i>=0;i--){
+            int temp=arr[i];
+            int maxi=s.top();
+            arr[i]=maxi;
+            if(temp>maxi)
+                s.push(temp);
+        }
+        return arr;
+    }*/
+    /*vector<int> replaceElements(vector<int>& arr) {   //Time Complexity: O(n^2)
         int n=arr.size();
         int max=-1;
         for(int i=0;i<n-1;i++){
