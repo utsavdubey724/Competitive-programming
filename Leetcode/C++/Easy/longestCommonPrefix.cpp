@@ -30,6 +30,28 @@ strs[i] consists of only lower-case English letters.
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
+        ios_base::sync_with_stdio(0);                        
+        cin.tie(0);                                          
+        cout.tie(0);
+        
+        int n=strs.size();
+        string ans=strs[0];
+        for(int i=1;i<n;i++){
+            int diff=ans.size()-strs[i].size();
+            if(diff>0){
+                ans.erase(ans.size()-diff,diff);
+            }
+            if(ans==strs[i])
+                continue;
+            for(int j=0;j<ans.size();j++){
+                if(ans[j]!=strs[i][j]){
+                    ans.erase(j,ans.size()-j);
+                }
+            }  
+        }
+        return ans;
+    }
+    /*string longestCommonPrefix(vector<string>& strs) {
         ios_base::sync_with_stdio(0);
         cin.tie(0);
         cout.tie(0);
@@ -62,5 +84,5 @@ public:
             cout<<ans<<endl;
         }
         return ans;
-    }
+    }*/
 };
