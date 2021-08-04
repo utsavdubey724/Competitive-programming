@@ -79,7 +79,13 @@ public:
             }
             prevSize++;
         }   
-        
+        /*for(auto it=mySet.begin();it!=mySet.end();it++){       //Displaying set of vector
+            v.clear();
+            v=*it;
+            for(int i=0;i<v.size();i++)
+                cout<<v[i]<<" ";
+            cout<<endl;
+        }*/
         return flag;
     }
     /*bool isPathCrossing(string path) {
