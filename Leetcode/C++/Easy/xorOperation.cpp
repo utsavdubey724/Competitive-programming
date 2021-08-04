@@ -43,7 +43,8 @@ public:
     int xorOperation(int n, int start) {
         int res=0;
         while(n--){
-            res=res^start;
+            res=res xor start;
+            res=res ^ start;                //Same as above
             start+=2;
         }
         return res;
