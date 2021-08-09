@@ -23,8 +23,8 @@ For example, given the above Employee table, the nth highest salary where n = 2 
 | 200                    |
 +------------------------+
 
-
-Solution:
+*/
+--Solution:
 
 CREATE FUNCTION getNthHighestSalary(@N INT) RETURNS INT AS
 BEGIN
