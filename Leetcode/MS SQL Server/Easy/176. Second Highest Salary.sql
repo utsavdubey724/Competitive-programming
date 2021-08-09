@@ -23,9 +23,9 @@ For example, given the above Employee table, the query should return 200 as the 
 +---------------------+
 | 200                 |
 +---------------------+
+*/
 
-
-Solution:
+--Solution:
 
 SELECT MAX(Salary) AS SecondHighestSalary
 FROM Employee
