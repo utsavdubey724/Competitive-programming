@@ -25,9 +25,9 @@ For example, your query should return the following for the above table:
 | a@b.com |
 +---------+
 Note: All emails are in lowercase.
+*/
 
-
-Solution:
+--Solution:
 
 SELECT Email
 FROM Person
