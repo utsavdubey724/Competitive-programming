@@ -27,9 +27,9 @@ employee who earns more than his manager.
 +----------+
 | Joe      |
 +----------+
+*/
 
-
-Solution:
+--Solution:
 
 SELECT e1.Name AS Employee
 FROM Employee e1 INNER JOIN Employee e2 ON e1.ManagerId=e2.Id 
