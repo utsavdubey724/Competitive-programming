@@ -50,9 +50,9 @@ Result table:
 +----+------+-----+--------+
 (1, A) and (3, C) were changed from 'm' to 'f'.
 (2, B) and (4, D) were changed from 'f' to 'm'.
+*/
 
-
-Solution:
+--Solution:
 
 UPDATE Salary 
 SET sex=CASE sex
