@@ -30,9 +30,9 @@ For example, according to the above table, we should output:
 | Afghanistan  | 25500100    | 652230       |
 | Algeria      | 37100000    | 2381741      |
 +--------------+-------------+--------------+
+*/
 
-
-Solution:
+--Solution:
 
 SELECT name, population, area
 FROM World
